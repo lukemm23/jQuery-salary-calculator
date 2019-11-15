@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <link rel="stylesheet" href="style/style.css">
+    <script type="text/javascript" src="vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="client/client.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Salary Calculator</h1>
     <h3>Add Employee</h3>
-    <form action="submit">
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="text" placeholder="ID">
-        <input type="text" placeholder="Title">
-        <input type="text" placeholder="Salary">
+    <form id="addEmpForm">
+        <input type="text" id="firstName" placeholder="First Name">
+        <input type="text" id="lastName" placeholder="Last Name">
+        <input type="text" id="id" placeholder="ID">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="salary" placeholder="Annual Salary">
+        <button class="btn">Submit</button>
     </form>
 
-    <button class="btn">Submit</button>
     <h3>Employees</h3>
     <table>
         <thead>
@@ -27,17 +29,13 @@
             <th>ID</th>
             <th>Title</th>
             <th>Salary</th>
+            <th></th>
         </thead>
-        <tr>
-            <td>Luke</td>
-            <td>Ma</td>
-            <td>1</td>
-            <td>Student</td>
-            <td>$0</td>
-        </tr>
+        <tbody class="employees">
+        </tbody>
     </table>
 
-    <h3>Monthly Total:</h3>
+    <h3 class="monthlyTotal">Monthly Total:</h3>
     
 </body>
 </html>
