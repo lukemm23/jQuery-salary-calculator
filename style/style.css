@@ -1,3 +1,49 @@
+
+body {
+ border-style: solid;
+ border-width: 5px;
+ text-align: center;
+ margin: 50px;
+}
+
+h1 {
+    text-align: center;
+    background-color: cadetblue;
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+h4 {
+    text-align: left;
+    margin-left: 25px;
+}
+
+input {
+    width: 17%;
+    border-style: solid;
+    border-width: 1px;
+    margin: 4px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+thead {
+    background-color: cadetblue;
+}
+
 .btn {
-    background-color: rgb(127, 133, 53);
+    background-color:cadetblue;
+    text-align: right;
+
+}
+
+table {
+    text-align: center;
+}
+
+.monthlyTotal {
+    text-align: right;
+    margin-right: 25px;
 }

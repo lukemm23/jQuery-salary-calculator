@@ -51,6 +51,7 @@ function resetInputs() {
 function render() {
     $('.employees').empty();
     findTotal();
+    $('.monthlyTotal').css('color', 'black');
 
     for (let i = 0; i < empArray.length; i++) {
         const emp = empArray[i];
@@ -69,10 +70,19 @@ function render() {
 
     function findTotal() {
         totalCost = 0;
+    
         for(let emp of empArray) {
-            totalCost += emp.salary;
+                totalCost += emp.salary;
         }
     }
-
-    $('.monthlyTotal').text(`Monthly Total: $${totalCost}`);
+    const maxCost = 20000;
+    if(totalCost <= maxCost) {
+        $('.monthlyTotal').text(`Monthly Total: $${totalCost}`);
+    } else if (totalCost > maxCost) {
+        $('.monthlyTotal').css('color', 'red');
+        $('.monthlyTotal').text(`Monthly Total: $${totalCost}`);
+    }
+    
 }
+
+// $('.monthlyTotal').css('border-color', 'red');
