@@ -51,7 +51,7 @@ function resetInputs() {
 function render() {
     $('.employees').empty();
     findTotal();
-    $('.monthlyTotal').css('color', 'black');
+    changeTextColor();
 
     for (let i = 0; i < empArray.length; i++) {
         const emp = empArray[i];
@@ -63,7 +63,7 @@ function render() {
                 <td>${emp.id}</td>
                 <td>${emp.title}</td>
                 <td>$${emp.salary}</td>
-                <td  data-id="${i}"><button class="btn-delete">Delete</button></td>
+                <td  data-id="${i}"><button class="btn btn-sm btn-delete">Delete</button></td>
             </tr>
         `);
     }
@@ -75,6 +75,16 @@ function render() {
                 totalCost += emp.salary;
         }
     }
+    
+    budgetMax();
+    
+}
+
+function changeTextColor() {
+    $('.monthlyTotal').css('color', 'black');
+}
+
+function budgetMax() {
     const maxCost = 20000;
     if(totalCost <= maxCost) {
         $('.monthlyTotal').text(`Monthly Total: $${totalCost}`);
@@ -82,7 +92,4 @@ function render() {
         $('.monthlyTotal').css('color', 'red');
         $('.monthlyTotal').text(`Monthly Total: $${totalCost}`);
     }
-    
 }
-
-// $('.monthlyTotal').css('border-color', 'red');
